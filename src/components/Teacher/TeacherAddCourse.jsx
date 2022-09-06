@@ -1,7 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import TeacherSidebar from './TeacherSidebar'
 
 const TeacherAddCourse = () => {
+
+    useEffect(() => {
+        document.title = 'Teacher Add Course'
+    })
+
   return (
     <div className="container mt-4">
             <div className="row">

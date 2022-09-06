@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import TeacherSidebar from './TeacherSidebar'
 
 const TeacherStudentUsers = () => {
+    
+    useEffect(() => {
+        document.title = 'Teacher Students Users'
+    })
+
     return (
         <div className="container mt-4">
             <div className="row">

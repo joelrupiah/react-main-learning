@@ -6,7 +6,12 @@ import About from './About';
 import CourseDetail from './CourseDetail';
 import Home from './Home'
 
-import TeacherDetail from './TeacherDetail'
+import TeacherDetail from './Teacher/TeacherDetail'
+import LatestCourses from './LatestCourses'
+import Courses from './Courses'
+import PopularCourses from './PopularCourses'
+import PopularTeachers from './PopularTeachers'
+import CategoryCourses from './CategoryCourses'
 
 // user routes
 import MyCourses from './User/MyCourses'
@@ -40,7 +45,12 @@ const Main = () => {
             <Route path='/user-dashboard' element={<Dashboard />} />
             <Route path='/about' element={<About />} />
 
-            <Route path='/teacher-detail/:teacher_id' element={<TeacherDetail />}></Route>
+            <Route path='/courses' element={<Courses />}></Route>
+            <Route path='/latest-courses' element={<LatestCourses />}></Route>
+            <Route path='/popular-courses' element={<PopularCourses />}></Route>
+            <Route path='/popular-teachers' element={<PopularTeachers />}></Route>
+            <Route path='/category/:category_slug' element={<CategoryCourses />}></Route>
+            
 
             {/* user routes */}
             <Route path='/my-courses' element={<MyCourses />} />
@@ -62,6 +72,7 @@ const Main = () => {
             <Route path='/my-student-users' element={<TeacherStudentUsers />}></Route>
             <Route path='/teacher-profile-settings' element={<TeacherProfileSettings />}></Route>
             <Route path='/teacher-change-password' element={<TeacherPasswordChange />}></Route>
+            <Route path='/teacher-detail/:teacher_id' element={<TeacherDetail />}></Route>
             {/* end teacher routes */}
             
         </Routes>

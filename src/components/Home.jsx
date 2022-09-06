@@ -1,14 +1,21 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from "react-router-dom";
 
 const Home = () => {
+    
+    useEffect(() => {
+        document.title = 'Home'
+    })
+
     return (
         <div className='container mt-5'>
             {/* Latest courses */}
-            <h3 className='pb-4 mb-2'>Latest Courses <a href="/" className='float-end'>See All</a> </h3>
+            <h3 className='pb-4 mb-2'>Latest Courses
+                <Link to="/latest-courses" className='float-end'>See All</Link>
+            </h3>
             <div className='row'>
                 <div className="col-md-3">
-                    <div className="card" style={{ width: "18rem" }}>
+                    <div className="card text-start" style={{ width: "18rem" }}>
                         <Link to="/detail/1">
                             <img src="image-one.jpg" className="card-img-top" alt="..." />
                         </Link>
@@ -17,10 +24,16 @@ const Home = () => {
                                 <Link to="/detail/1">Course title</Link>
                             </h5>
                         </div>
+                        <div className="card-footer">
+                            <div className="title">
+                                <span>Rating: 4.5/5</span>
+                                <span className='float-end'>Views: 2000</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div className="col-md-3">
-                    <div className="card" style={{ width: "18rem" }}>
+                    <div className="card text-start" style={{ width: "18rem" }}>
                         <Link to="/detail/1">
                             <img src="image-one.jpg" className="card-img-top" alt="..." />
                         </Link>
@@ -29,10 +42,16 @@ const Home = () => {
                                 <Link to="/detail/1">Course title</Link>
                             </h5>
                         </div>
+                        <div className="card-footer">
+                            <div className="title">
+                                <span>Rating: 4.5/5</span>
+                                <span className='float-end'>Views: 2000</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div className="col-md-3">
-                    <div className="card" style={{ width: "18rem" }}>
+                    <div className="card text-start" style={{ width: "18rem" }}>
                         <Link to="/detail/1">
                             <img src="image-one.jpg" className="card-img-top" alt="..." />
                         </Link>
@@ -41,10 +60,16 @@ const Home = () => {
                                 <Link to="/detail/1">Course title</Link>
                             </h5>
                         </div>
+                        <div className="card-footer">
+                            <div className="title">
+                                <span>Rating: 4.5/5</span>
+                                <span className='float-end'>Views: 2000</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div className="col-md-3">
-                    <div className="card" style={{ width: "18rem" }}>
+                    <div className="card text-start" style={{ width: "18rem" }}>
                         <Link to="/detail/1">
                             <img src="image-one.jpg" className="card-img-top" alt="..." />
                         </Link>
@@ -52,6 +77,12 @@ const Home = () => {
                             <h5 className="card-title">
                                 <Link to="/detail/1">Course title</Link>
                             </h5>
+                        </div>
+                        <div className="card-footer">
+                            <div className="title">
+                                <span>Rating: 4.5/5</span>
+                                <span className='float-end'>Views: 2000</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -59,10 +90,12 @@ const Home = () => {
             {/* End latest courses */}
 
             {/* Popular courses */}
-            <h3 className='pb-4 mb-2 mt-5'>Popular Courses <a href="/" className='float-end'>See All</a> </h3>
+            <h3 className='pb-4 mb-2 mt-5'>Popular Courses
+                <Link to="/popular-courses" className='float-end'>See All</Link>
+            </h3>
             <div className='row'>
                 <div className="col-md-3">
-                    <div className="card" style={{ width: "18rem" }}>
+                    <div className="card text-start" style={{ width: "18rem" }}>
                         <a href="/">
                             <img src="image-one.jpg" className="card-img-top" alt="..." />
                         </a>
@@ -71,10 +104,16 @@ const Home = () => {
                                 <a href="/">Course title</a>
                             </h5>
                         </div>
+                        <div className="card-footer">
+                            <div className="title">
+                                <span>Rating: 4.5/5</span>
+                                <span className='float-end'>Views: 2000</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div className="col-md-3">
-                    <div className="card" style={{ width: "18rem" }}>
+                    <div className="card text-start" style={{ width: "18rem" }}>
                         <a href="/">
                             <img src="image-one.jpg" className="card-img-top" alt="..." />
                         </a>
@@ -83,10 +122,16 @@ const Home = () => {
                                 <a href="/">Course title</a>
                             </h5>
                         </div>
+                        <div className="card-footer">
+                            <div className="title">
+                                <span>Rating: 4.5/5</span>
+                                <span className='float-end'>Views: 2000</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div className="col-md-3">
-                    <div className="card" style={{ width: "18rem" }}>
+                    <div className="card text-start" style={{ width: "18rem" }}>
                         <a href="/">
                             <img src="image-one.jpg" className="card-img-top" alt="..." />
                         </a>
@@ -95,10 +140,16 @@ const Home = () => {
                                 <a href="/">Course title</a>
                             </h5>
                         </div>
+                        <div className="card-footer">
+                            <div className="title">
+                                <span>Rating: 4.5/5</span>
+                                <span className='float-end'>Views: 2000</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div className="col-md-3">
-                    <div className="card" style={{ width: "18rem" }}>
+                    <div className="card text-start" style={{ width: "18rem" }}>
                         <a href="/">
                             <img src="image-one.jpg" className="card-img-top" alt="..." />
                         </a>
@@ -106,6 +157,12 @@ const Home = () => {
                             <h5 className="card-title">
                                 <a href="/">Course title</a>
                             </h5>
+                        </div>
+                        <div className="card-footer">
+                            <div className="title">
+                                <span>Rating: 4.5/5</span>
+                                <span className='float-end'>Views: 2000</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -113,53 +170,79 @@ const Home = () => {
             {/* End popular courses */}
 
             {/* Popular teachers */}
-            <h3 className='pb-4 mb-2 mt-5'>Popular Teachers <a href="/" className='float-end'>See All</a> </h3>
+            <h3 className='pb-4 mb-2 mt-5'>Popular Teachers
+                <Link to="/popular-teachers" className='float-end'>See All</Link>
+            </h3>
             <div className='row'>
                 <div className="col-md-3">
-                    <div className="card" style={{ width: "18rem" }}>
-                        <a href="/">
+                    <div className="card text-start" style={{ width: "18rem" }}>
+                        <Link to="/teacher-detail/1">
                             <img src="image-one.jpg" className="card-img-top" alt="..." />
-                        </a>
+                        </Link>
                         <div className="card-body">
                             <h5 className="card-title">
-                                <a href="/">Teacher Name</a>
+                                <Link to="/teacher-detail/1">Teacher Name</Link>
                             </h5>
+                        </div>
+                        <div className="card-footer">
+                            <div className="title">
+                                <span>Rating: 4.5/5</span>
+                                <span className='float-end'>Views: 2000</span>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div className="col-md-3">
-                    <div className="card" style={{ width: "18rem" }}>
-                        <a href="/">
+                    <div className="card text-start" style={{ width: "18rem" }}>
+                        <Link to="/teacher-detail/1">
                             <img src="image-one.jpg" className="card-img-top" alt="..." />
-                        </a>
+                        </Link>
                         <div className="card-body">
                             <h5 className="card-title">
-                                <a href="/">Teacher Name</a>
+                                <Link to="/teacher-detail/1">Teacher Name</Link>
                             </h5>
+                        </div>
+                        <div className="card-footer">
+                            <div className="title">
+                                <span>Rating: 4.5/5</span>
+                                <span className='float-end'>Views: 2000</span>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div className="col-md-3">
-                    <div className="card" style={{ width: "18rem" }}>
-                        <a href="/">
+                    <div className="card text-start" style={{ width: "18rem" }}>
+                        <Link to="/teacher-detail/1">
                             <img src="image-one.jpg" className="card-img-top" alt="..." />
-                        </a>
+                        </Link>
                         <div className="card-body">
                             <h5 className="card-title">
-                                <a href="/">Teacher Name</a>
+                                <Link to="/teacher-detail/1">Teacher Name</Link>
                             </h5>
+                        </div>
+                        <div className="card-footer">
+                            <div className="title">
+                                <span>Rating: 4.5/5</span>
+                                <span className='float-end'>Views: 2000</span>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div className="col-md-3">
-                    <div className="card" style={{ width: "18rem" }}>
-                        <a href="/">
+                    <div className="card text-start" style={{ width: "18rem" }}>
+                        <Link to="/teacher-detail/1">
                             <img src="image-one.jpg" className="card-img-top" alt="..." />
-                        </a>
+                        </Link>
                         <div className="card-body">
                             <h5 className="card-title">
-                                <a href="/">Teacher Name</a>
+                                <Link to="/teacher-detail/1">Teacher Name</Link>
                             </h5>
+                        </div>
+                        <div className="card-footer">
+                            <div className="title">
+                                <span>Rating: 4.5/5</span>
+                                <span className='float-end'>Views: 2000</span>
+                            </div>
                         </div>
                     </div>
                 </div>

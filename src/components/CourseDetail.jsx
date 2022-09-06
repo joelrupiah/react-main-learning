@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from "react-router-dom";
 // import { useParams } from 'react-router-dom'
 
 const CourseDetail = () => {
+    
+    useEffect(() => {
+        document.title = 'Course Detail'
+    })
+
 
     // let { course_id } = useParams()
 
@@ -41,48 +46,66 @@ const CourseDetail = () => {
                     <li class="list-group-item">Introductions
                         <span className='float-end'>
                             <span className='me-5'> 1 hour 30 mins</span>
-                            <button className="btn btn-sm btn-success">
+                            <button className="btn btn-sm btn-success" data-bs-toggle="modal" data-bs-target="#videoModal">
                                 <i class="bi bi-play-btn"></i>
                             </button>
                         </span>
+
+                        {/* video modal */}
+                        <div className="modal fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div className="modal-dialog modal-xl modal-dialog-centered">
+                                <div className="modal-content">
+                                    <div className="modal-header">
+                                        <h5 className="modal-title" id="exampleModalLabel">Video One</h5>
+                                        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div className="modal-body">
+                                        <div className="ratio ratio-16x9">
+                                            <iframe src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" title="YouTube video" allowfullscreen></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {/* end video modal */}
                     </li>
-                    <li class="list-group-item">Introductions
+                    <li className="list-group-item">Introductions
                         <span className='float-end'>
                             <span className='me-5'> 1 hour 30 mins</span>
                             <button className="btn btn-sm btn-success">
-                                <i class="bi bi-play-btn"></i>
+                                <i className="bi bi-play-btn"></i>
                             </button>
                         </span>
                     </li>
-                    <li class="list-group-item">Introductions
+                    <li className="list-group-item">Introductions
                         <span className='float-end'>
                             <span className='me-5'> 1 hour 30 mins</span>
                             <button className="btn btn-sm btn-success">
-                                <i class="bi bi-play-btn"></i>
+                                <i className="bi bi-play-btn"></i>
                             </button>
                         </span>
                     </li>
-                    <li class="list-group-item">Introductions
+                    <li className="list-group-item">Introductions
                         <span className='float-end'>
                             <span className='me-5'> 1 hour 30 mins</span>
                             <button className="btn btn-sm btn-success">
-                                <i class="bi bi-play-btn"></i>
+                                <i className="bi bi-play-btn"></i>
                             </button>
                         </span>
                     </li>
-                    <li class="list-group-item">Introductions
+                    <li className="list-group-item">Introductions
                         <span className='float-end'>
                             <span className='me-5'> 1 hour 30 mins</span>
                             <button className="btn btn-sm btn-success">
-                                <i class="bi bi-play-btn"></i>
+                                <i className="bi bi-play-btn"></i>
                             </button>
                         </span>
                     </li>
-                    <li class="list-group-item">Introductions
+                    <li className="list-group-item">Introductions
                         <span className='float-end'>
                             <span className='me-5'> 1 hour 30 mins</span>
                             <button className="btn btn-sm btn-success">
-                                <i class="bi bi-play-btn"></i>
+                                <i className="bi bi-play-btn"></i>
                             </button>
                         </span>
                     </li>

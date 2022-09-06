@@ -17,6 +17,9 @@ const Header = () => {
                         <li className="nav-item">
                             <Link className="nav-link" to="/about">About Us</Link>
                         </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/courses">Courses</Link>
+                        </li>
                         <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle" href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Teacher

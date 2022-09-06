@@ -1,6 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 const Login = () => {
+    
+    useEffect(() => {
+        document.title = 'User Login'
+    })
+
     return (
         <div className="container mt-4">
             <div className="row">

@@ -1,7 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 const TeacherDetail = () => {
+    
+    useEffect(() => {
+        document.title = 'Teacher Detail'
+    })
+
   return (
     <div className="container mt-3">
             <div className="row text-start">
@@ -18,9 +23,9 @@ const TeacherDetail = () => {
                         making it look like readable English.
                     </p>
                     <p className='fw-bold'>Skills:     
-                        <Link to="/teacher-detail/2">   PHP</Link>, 
-                        <Link to="/teacher-detail/2">   Python</Link>,
-                        <Link to="/teacher-detail/2">   Javascript</Link>
+                        <Link to="/category/php">   PHP</Link>, 
+                        <Link to="/category/python">   Python</Link>,
+                        <Link to="/category/javascript">   Javascript</Link>
                     </p>
                     <p className='fw-bold'>Recent Course:  <Link to="/teacher-detail/2">  ReactJs Course</Link></p>
                     <p className='fw-bold'>Enrolled Students:  400 Students</p>

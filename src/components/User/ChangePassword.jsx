@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 // import { Link } from 'react-router-dom'
 import Sidebar from './Sidebar'
 
 const ChangePassword = () => {
+    
+    useEffect(() => {
+        document.title = 'User Change Password'
+    })
+
     return (
         <div className="container mt-4">
             <div className="row">
