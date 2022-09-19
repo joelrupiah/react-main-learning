@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import TeacherSidebar from './TeacherSidebar'
 
 const TeacherCourses = () => {
-    
+
     useEffect(() => {
         document.title = 'Teacher Courses'
     })
@@ -30,6 +30,7 @@ const TeacherCourses = () => {
                                     <td>PHP Development</td>
                                     <td><Link to="/">111</Link></td>
                                     <td>
+                                        <Link className='btn btn-success btn-sm active ms-2' to="/add-chapter/2">Add Chapters</Link>
                                         <button type='submit' className="btn btn-danger btn-sm active">Delete</button>
                                     </td>
                                 </tbody>

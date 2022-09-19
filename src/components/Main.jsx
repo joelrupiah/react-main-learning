@@ -27,12 +27,14 @@ import Register from './User/Register'
 // teacher routes
 import TeacherLogin from './Teacher/TeacherLogin'
 import TeacherRegister from './Teacher/TeacherRegister'
+import TeacherLogout from './Teacher/TeacherLogout'
 import TeacherDashboard from './Teacher/TeacherDashboard'
 import TeacherCourses from './Teacher/TeacherCourses'
 import TeacherAddCourse from './Teacher/TeacherAddCourse'
 import TeacherStudentUsers from './Teacher/TeacherStudentUsers'
 import TeacherProfileSettings from './Teacher/TeacherProfileSettings'
 import TeacherPasswordChange from './Teacher/TeacherPasswordChange'
+import AddChapter from './Teacher/AddChapter'
 // end teacher routes
 
 const Main = () => {
@@ -66,6 +68,7 @@ const Main = () => {
             {/* teacher routes */}
             <Route path='/teacher-login' element={<TeacherLogin />}></Route>
             <Route path='/teacher-register' element={<TeacherRegister />}></Route>
+            <Route path='/teacher-logout' element={<TeacherLogout />}></Route>
             <Route path='/teacher-dashboard' element={<TeacherDashboard />}></Route>
             <Route path='/my-teacher-courses' element={<TeacherCourses />}></Route>
             <Route path='/add-teacher-course' element={<TeacherAddCourse />}></Route>
@@ -73,6 +76,7 @@ const Main = () => {
             <Route path='/teacher-profile-settings' element={<TeacherProfileSettings />}></Route>
             <Route path='/teacher-change-password' element={<TeacherPasswordChange />}></Route>
             <Route path='/teacher-detail/:teacher_id' element={<TeacherDetail />}></Route>
+            <Route path='/add-chapter/:course_id' element={<AddChapter />}></Route>
             {/* end teacher routes */}
             
         </Routes>
