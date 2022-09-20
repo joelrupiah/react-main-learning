@@ -9,6 +9,8 @@ const TeacherLogin = () => {
         password: ''
     })
 
+    const [errorMessage, setErrorMessage] = useState('')
+
     const handleChange = (event) => (
         setTeacherLoginData({
             ...teacherLoginData,
@@ -27,7 +29,10 @@ const TeacherLogin = () => {
                 // console.log(response.data)
                 if (response.data.bool === true) {
                     localStorage.setItem('teacherLoginStatus', true)
+                    localStorage.setItem('teacherId', response.data.teacher_id)
                     window.location.href = '/teacher-dashboard'
+                }else{
+                    setErrorMessage('Invalid email or password. Please try again')
                 }
             })
         } catch (error) {
@@ -51,6 +56,7 @@ const TeacherLogin = () => {
                     <div className="card text-start">
                         <h5 className='card-header'>Teacher Login</h5>
                         <div className="card-body">
+                            {errorMessage && <p className='text-danger text-sm'>{errorMessage}</p>}
                             <form>
                                 <div className="mb-3">
                                     <label className="form-label">Email address</label>

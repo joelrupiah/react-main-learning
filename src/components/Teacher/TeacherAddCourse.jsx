@@ -14,6 +14,8 @@ const TeacherAddCourse = () => {
         technologies: ''
     })
 
+    const teacherId = localStorage.getItem('teacherId')
+
     const handleChange = (event) => {
         setCourseData({
             ...courseData,
@@ -33,7 +35,7 @@ const TeacherAddCourse = () => {
 
         _formData.append('category', courseData.category)
         _formData.append('title', courseData.title)
-        _formData.append('teacher', 2)
+        _formData.append('teacher', teacherId)
         _formData.append('description', courseData.description)
         _formData.append('featured_image', courseData.featured_image, courseData.featured_image.name)
         _formData.append('technologies', courseData.technologies)
@@ -44,7 +46,8 @@ const TeacherAddCourse = () => {
                     'content-type': 'multipart/form-data'
                 }
             }).then((response) => {
-                console.log(response.data)
+                // console.log(response.data)
+                window.location.href='/add-teacher-course'
             })
         } catch (error) {
             console.log(error)

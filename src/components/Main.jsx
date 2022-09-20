@@ -35,6 +35,8 @@ import TeacherStudentUsers from './Teacher/TeacherStudentUsers'
 import TeacherProfileSettings from './Teacher/TeacherProfileSettings'
 import TeacherPasswordChange from './Teacher/TeacherPasswordChange'
 import AddChapter from './Teacher/AddChapter'
+import AllChapters from './Teacher/AllChapters'
+import EditChapter from './Teacher/EditChapter'
 // end teacher routes
 
 const Main = () => {
@@ -77,6 +79,8 @@ const Main = () => {
             <Route path='/teacher-change-password' element={<TeacherPasswordChange />}></Route>
             <Route path='/teacher-detail/:teacher_id' element={<TeacherDetail />}></Route>
             <Route path='/add-chapter/:course_id' element={<AddChapter />}></Route>
+            <Route path='/all-chapters/:course_id' element={<AllChapters />}></Route>
+            <Route path='/edit-chapter/:chapter_id' element={<EditChapter />}></Route>
             {/* end teacher routes */}
             
         </Routes>
