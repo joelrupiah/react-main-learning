@@ -31,6 +31,7 @@ import TeacherLogout from './Teacher/TeacherLogout'
 import TeacherDashboard from './Teacher/TeacherDashboard'
 import TeacherCourses from './Teacher/TeacherCourses'
 import TeacherAddCourse from './Teacher/TeacherAddCourse'
+import TeacherEditCourse from './Teacher/TeacherEditCourse'
 import TeacherStudentUsers from './Teacher/TeacherStudentUsers'
 import TeacherProfileSettings from './Teacher/TeacherProfileSettings'
 import TeacherPasswordChange from './Teacher/TeacherPasswordChange'
@@ -74,6 +75,7 @@ const Main = () => {
             <Route path='/teacher-dashboard' element={<TeacherDashboard />}></Route>
             <Route path='/my-teacher-courses' element={<TeacherCourses />}></Route>
             <Route path='/add-teacher-course' element={<TeacherAddCourse />}></Route>
+            <Route path='/edit-course/:course_id' element={<TeacherEditCourse />}></Route>
             <Route path='/my-student-users' element={<TeacherStudentUsers />}></Route>
             <Route path='/teacher-profile-settings' element={<TeacherProfileSettings />}></Route>
             <Route path='/teacher-change-password' element={<TeacherPasswordChange />}></Route>

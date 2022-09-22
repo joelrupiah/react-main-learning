@@ -14,20 +14,7 @@ const AllChapters = () => {
 
     // console.log(courseId)
 
-    const Swal = require('sweetalert2')
-    const handleDeleteClick = () => {
-        Swal.fire({
-            title: 'Confirm',
-            text: 'Are you sure you want to delete',
-            icon: 'error',
-            showCancelButton: true,
-            confirmButtonText: 'Continue'
-            
-        })
-    }
-
-    useEffect(() => {
-        // document.title = 'course Courses'
+    const fetchChapterData = () => {
         try {
             axios.get(baseUrl + '/course-chapters/' + course_id).then((response) => {
                 console.log(response.data)
@@ -37,6 +24,35 @@ const AllChapters = () => {
         } catch (error) {
             console.log(error)
         }
+    }
+
+    const handleDeleteClick = (chapter_id) => {
+        Swal.fire({
+            title: 'Confirm',
+            text: 'Are you sure you want to delete',
+            icon: 'error',
+            showCancelButton: true,
+            confirmButtonText: 'Continue'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                try {
+                    axios.delete(baseUrl + '/chapter/' + chapter_id).then((response) => {
+                        Swal.fire('success', 'Chapter deleted succesfully')
+                        fetchChapterData()
+                    })
+
+                } catch (error) {
+                    Swal.fire('error', 'Data cannot be deleted contact IT department')
+                }
+            } else {
+                Swal.fire('error', 'Chapter not deleted')
+            }
+        })
+    }
+
+    useEffect(() => {
+        document.title = 'Chapters'
+        fetchChapterData()
     }, [])
 
     return (
@@ -47,7 +63,9 @@ const AllChapters = () => {
                 </aside>
                 <section className="col-md-9">
                     <div className="card text-start">
-                        <h5 className="card-header">All Chapters ({totalResult})</h5>
+                        <h5 className="card-header">All Chapters ({totalResult})
+                        <Link className='btn btn-success btn-sm float-end' to={`/add-chapter/` + course_id}>Add Chapter</Link>
+                        </h5>
                         <div className="card-body">
                             <table className="table table-bordered">
                                 <thead>
@@ -79,7 +97,7 @@ const AllChapters = () => {
                                             <td>
                                                 <Link className='btn btn-info btn-sm text-white' to={`/edit-chapter/` + chapter.id}>
                                                     Edit</Link>
-                                                <button className='btn btn-danger btn-sm ms-2 text-white' onClick={handleDeleteClick}>Delete</button>
+                                                <button className='btn btn-danger btn-sm ms-2 text-white' onClick={() => handleDeleteClick(chapter.id)}>Delete</button>
                                             </td>
                                         </tr>
                                     )}

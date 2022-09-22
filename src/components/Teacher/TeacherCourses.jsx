@@ -50,6 +50,7 @@ const TeacherCourses = () => {
                                             <td><Link to="/">111</Link></td>
                                             <td>
                                                 <Link className='btn btn-success btn-sm active' to={`/add-chapter/` + course.id}>Add Chapters</Link>
+                                                <Link className='btn btn-warning btn-sm active ms-2' to={`/edit-course/` + course.id}>Edit</Link>
                                                 <button type='submit' className="btn btn-danger btn-sm ms-2">Delete</button>
                                             </td>
                                         </tr>

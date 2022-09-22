@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import Swal from 'sweetalert2'
 import TeacherSidebar from './TeacherSidebar'
 
 const baseUrl = "http://127.0.0.1:8000/api"
@@ -12,8 +13,8 @@ const EditChapter = () => {
         course: '',
         title: '',
         description: '',
-        // video: '',
         previous_video: '',
+        video: '',
         remarks: ''
     })
 
@@ -37,16 +38,30 @@ const EditChapter = () => {
         _formData.append('course', chapterData.course)
         _formData.append('title', chapterData.title)
         _formData.append('description', chapterData.description)
-        _formData.append('video', chapterData.video, chapterData.video.name)
+        if (chapterData.video !== '') {
+            _formData.append('video', chapterData.video, chapterData.video.name)
+        }
         _formData.append('remarks', chapterData.remarks)
 
         try {
-            axios.post(baseUrl + '/chapter/' + chapter_id, _formData, {
+            axios.put(baseUrl + '/chapter/' + chapter_id, _formData, {
                 headers: {
                     'content-type': 'multipart/form-data'
                 }
             }).then((response) => {
-                console.log(response.data)
+                // console.log(response.data)
+                if (response.status == 200) {
+                    Swal.fire({
+                        toast: true,
+                        icon: 'success',
+                        title: 'Chapter updated',
+                        animation: false,
+                        position: 'top-right',
+                        showConfirmButton: false,
+                        timer: 3000,
+                        // timerProgressBar: true,
+                    })
+                }
                 // window.location.href = '/add-chapter/5'
             })
         } catch (error) {
@@ -55,16 +70,23 @@ const EditChapter = () => {
     }
 
     useEffect(() => {
-        // document.title = 'Teacher Add Chapter'
+        document.title = 'Teacher Add Chapter'
         try {
             axios.get(baseUrl + '/chapter/' + chapter_id).then((response) => {
-                // console.log(response.data)
-                setChapterData(response.data)
+                console.log(response.data)
+                setChapterData({
+                    course: response.data.course,
+                    title: response.data.title,
+                    description: response.data.description,
+                    previous_video: response.data.video,
+                    video: '',
+                    remarks: response.data.remarks
+                })
             })
         } catch (error) {
             console.log(error)
         }
-    })
+    }, [])
 
     return (
         <div className="container mt-4">
@@ -92,16 +114,18 @@ const EditChapter = () => {
                                 <label className="col-sm-2 col-form-label">Video</label>
                                 <div className="col-sm-10">
                                     <input name='video' onChange={handleFileChange} type="file" className="form-control" />
-                                    <video controls width="100%" height="150">
+                                    {chapterData.previous_video &&
+                                        <video controls width="100%" height="500" className='mt-2'>
 
-                                        <source src={chapterData.video}
-                                            type="video/webm" />
+                                            <source src={chapterData.previous_video}
+                                                type="video/webm" />
 
-                                        <source src={chapterData.video}
-                                            type="video/mp4" />
+                                            <source src={chapterData.previous_video}
+                                                type="video/mp4" />
 
-                                        Sorry, your browser doesn't support embedded videos.
-                                    </video>
+                                            Sorry, your browser doesn't support embedded videos.
+                                        </video>
+                                    }
                                 </div>
                             </div>
                             <div className="mb-3 row">
